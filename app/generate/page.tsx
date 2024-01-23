@@ -49,7 +49,7 @@ function Error(props: ErrorProps) {
   );
 }
 
-const DEFAULT_PROMPT = 'Man cyberpunk, synthwave night city, futuristic, high quality, highly detailed, high resolution, sharp, hyper realistic, extremely detailed';
+const DEFAULT_PROMPT = 'an astronaut is on a spaceship, view of the earth from space, futuristic, high quality, highly detailed, high resolution, sharp, hyper realistic, extremely detailed';
 const DEFAULT_NEG_PROMPT = 'boobs, sexy, bad anatomy, bad hands, blurry, low resolution, bad, ugly, low quality, pixelated, interpolated, compression artifacts, noisey, grainy';
 let URL_RESULT = ''
 

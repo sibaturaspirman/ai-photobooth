@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       <div className="fixed container bottom-[52px] flex flex-col items-center justify-between w-full border-t-4 border-black bg-[#FE4A17] pt-12 pb-8 font-bold">
-        <div className="absolute top-[-86px] right-[20px] pointer-events-none">
+        <div className="absolute top-[-76px] right-[20px] pointer-events-none">
           <Image
             className="relative"
             src="/smile.png"
@@ -46,7 +46,7 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="absolute top-[-106px] left-[13px] pointer-events-none">
+        <div className="absolute top-[-67px] left-[13px] pointer-events-none">
           <Image
             className="relative"
             src="/ornament1.png"
@@ -57,7 +57,7 @@ export default function Home() {
           />
         </div>
 
-        <Link href="/generate">
+        <Link href="/generate" className="z-20">
           <button
             role="button"
             aria-label="Click to perform an action"
