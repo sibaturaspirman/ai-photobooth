@@ -180,7 +180,7 @@ export default function Home() {
   };
   return (
     
-    <main className="container flex flex-col items-center justify-between">
+    <main className="container flex flex-col items-center justify-between  overflow-x-hidden">
       <div className="fixed container flex w-full overflow-x-hidden border-b-4 border-t-4 border-black bg-[#F9B800] font-bold z-30 pointer-events-none">
         <div className="animate-marquee whitespace-nowrap py-2">
             <span className="text-lg tracking-[-.15em]">artificial.intelligence</span><span className="mx-4">•</span><span className="text-lg tracking-[-.15em]">stabble-diffusion</span><span className="mx-4">•</span><span className="text-lg tracking-[-.15em]">SDXL</span><span className="mx-4">•</span><span className="text-lg tracking-[-.15em]">diffusion-edge</span><span className="mx-4">•</span>
