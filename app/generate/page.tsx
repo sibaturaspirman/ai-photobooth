@@ -190,7 +190,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='relative w-full flex flex-col	place-items-center mt-20 mb-28 px-6 z-20'>
+      <div className='relative w-full flex flex-col	place-items-center mt-20 mb-28 px-4 z-20'>
         <div className='relative w-full'>
           <label htmlFor="prompt" className="block mb-2 text-current font-bold">Input Your Photos</label>
           <div className="flex w-full items-center border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
@@ -222,12 +222,12 @@ export default function Home() {
           </div>
           <div className="relative w-full mt-4">
             <button
+              disabled={!imageFile || loading}
               onClick={(e) => {
                 e.preventDefault();
                 generateImage();
               }}
-              className="flex cursor-pointer items-center border-4 border-black bg-[#FDDC07] px-4 py-3 font-bold text-base shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
-              disabled={loading}
+              className={`flex cursor-pointer items-center border-4 border-black px-4 py-3 font-bold text-base shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none ${imageFile ? "bg-[#FDDC07]" : "bg-gray-500" }`}
             >
               {loading ? 'PLEASE WAIT, GENERATING..' : 'GENERATE NOW!'}
             </button>
