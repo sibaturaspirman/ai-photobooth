@@ -15,10 +15,10 @@ const config: Config = {
       },
     },
     animation: {
-      marquee: "marquee 5s linear infinite",
-      marquee2: "marquee2 5s linear infinite",
-      marquee3: "marquee3 5s linear infinite",
-      marquee4: "marquee4 5s linear infinite",
+      marquee: "marquee 12s linear infinite",
+      marquee2: "marquee2 12s linear infinite",
+      marquee3: "marquee3 12s linear infinite",
+      marquee4: "marquee4 12s linear infinite",
     },
     keyframes: {
       marquee: {
