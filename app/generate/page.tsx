@@ -180,7 +180,7 @@ export default function Home() {
   };
   return (
     
-    <main className="container flex flex-col items-center justify-between  overflow-x-hidden">
+    <main className="container flex flex-col items-center justify-between overflow-x-hidden">
       <div className="fixed container flex w-full overflow-x-hidden border-b-4 border-t-4 border-black bg-[#F9B800] font-bold z-30 pointer-events-none">
         <div className="animate-marquee whitespace-nowrap py-2">
             <span className="text-lg tracking-[-.15em]">artificial.intelligence</span><span className="mx-4">•</span><span className="text-lg tracking-[-.15em]">stabble-diffusion</span><span className="mx-4">•</span><span className="text-lg tracking-[-.15em]">SDXL</span><span className="mx-4">•</span><span className="text-lg tracking-[-.15em]">diffusion-edge</span><span className="mx-4">•</span>
@@ -192,7 +192,7 @@ export default function Home() {
 
       <div className='relative w-full flex flex-col	place-items-center mt-20 mb-28 px-4 z-20'>
         <div className='relative w-full'>
-          <label htmlFor="prompt" className="block mb-2 text-current font-bold">Input Your Photos</label>
+          <label htmlFor="image_url" className="block mb-2 text-current font-bold">Input Your Photos</label>
           <div className="flex w-full items-center border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <input
               className="w-5/6 p-[10px] outline-none"
@@ -203,11 +203,11 @@ export default function Home() {
               accept="image/*;capture=camera"
               onChange={(e) => setImageFile(e.target.files?.[0] ?? null)}
             />
-            <div className="w-1/6 border-l-2 border-black bg-[#FDDC07] p-[16px] flex place-items-center">
+            <label htmlFor="image_url" className="w-1/6 border-l-2 border-black bg-[#FDDC07] py-[16px] flex place-items-center justify-center">
               <RiCameraLine
               className="min-h-[24px] min-w-[24px] transition-transform ease-in-out"
             />
-            </div>
+            </label>
           </div>
           <div className="relative w-full mt-4">
               <Image
