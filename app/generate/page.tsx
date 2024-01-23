@@ -229,7 +229,7 @@ export default function Home() {
               }}
               className={`flex cursor-pointer items-center border-4 border-black px-4 py-3 font-bold text-base shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none ${imageFile ? "bg-[#FDDC07]" : "bg-gray-500" }`}
             >
-              {loading ? 'WAIT, GENERATING..' : 'GENERATE NOW!'}
+              {loading ? 'WAITING FOR MAGIC...' : 'GENERATE NOW!'}
             </button>
             <p className="text-xs mt-2">
               {`Elapsed Time (seconds): ${(elapsedTime / 1000).toFixed(2)}`}
