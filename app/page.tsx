@@ -229,12 +229,12 @@ export default function Home() {
         <Error error={error} />
 
         <div className="w-full flex flex-col space-y-4">
-          {/* <div className="mx-auto">
+          <div className="mx-auto">
             {image && (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={image.url} alt="" />
             )}
-          </div> */}
+          </div>
           <div className="mx-auto">
             {imageFaceSwap && (
               // eslint-disable-next-line @next/next/no-img-element
