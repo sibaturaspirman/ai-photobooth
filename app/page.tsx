@@ -2,7 +2,6 @@
 
 import * as fal from '@fal-ai/serverless-client';
 import { useMemo, useState } from 'react';
-import Link from 'next/link';
 
 
 // @snippet:start(client.config)
@@ -181,9 +180,6 @@ export default function Home() {
       <main className="container dark:text-gray-50 text-gray-900 flex flex-col items-center justify-center w-full flex-1 py-10 space-y-8">
         <h1 className="text-4xl font-bold mb-8">
           Hello <code className="font-light text-pink-600">fal</code>
-        </h1>
-        <h1 className="text-4xl font-bold mb-8">
-          Learn <Link href="/camera-turbo">this page!</Link>
         </h1>
         <div className="text-lg w-full">
           <label htmlFor="prompt" className="block mb-2 text-current">
