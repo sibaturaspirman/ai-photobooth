@@ -49,7 +49,8 @@ function Error(props: ErrorProps) {
   );
 }
 
-const DEFAULT_PROMPT = 'an astronaut is on a spaceship, view of the earth from space, futuristic, high quality, highly detailed, high resolution, sharp, hyper realistic, extremely detailed';
+// const DEFAULT_PROMPT = 'an astronaut is on a spaceship, view of the earth from sss
+const DEFAULT_PROMPT = '';
 const DEFAULT_NEG_PROMPT = 'boobs, sexy, bad anatomy, bad hands, blurry, low resolution, bad, ugly, low quality, pixelated, interpolated, compression artifacts, noisey, grainy';
 let URL_RESULT = ''
 
@@ -57,7 +58,10 @@ let URL_RESULT = ''
 export default function Home() {
   // @snippet:start("client.ui.state")
   // Input state
-  const [prompt, setPrompt] = useState<string>(DEFAULT_PROMPT);
+  // const [prompt, setPrompt] = useState<string>(DEFAULT_PROMPT);
+  const [prompt1, setPrompt1] = useState<string>(DEFAULT_PROMPT);
+  const [prompt2, setPrompt2] = useState<string>(DEFAULT_PROMPT);
+  let prompt = prompt1 + prompt2;
   const negative_prompt = DEFAULT_NEG_PROMPT;
   const [imageFile, setImageFile] = useState<File | null>(null);
   // Result state
@@ -124,7 +128,7 @@ export default function Home() {
               update.status === 'COMPLETED'
             ) {
               setLogs((update.logs || []).map((log) => log.message));
-              console.log(update)
+              // console.log(update)
             }
           },
         }
@@ -143,7 +147,7 @@ export default function Home() {
 
 
   const generateImageSwap = async () => {
-    console.log(URL_RESULT)
+    // console.log(URL_RESULT)
     reset2();
     // @snippet:start("client.queue.subscribe")
     setLoading(true);
@@ -179,7 +183,6 @@ export default function Home() {
     // @snippet:end
   };
   return (
-    
     <main className="container flex flex-col items-center justify-between overflow-x-hidden">
       <div className="fixed container flex w-full overflow-x-hidden border-b-4 border-t-4 border-black bg-[#F9B800] font-bold z-30 pointer-events-none">
         <div className="animate-marquee whitespace-nowrap py-2">
@@ -192,7 +195,113 @@ export default function Home() {
 
       <div className='relative w-full flex flex-col	place-items-center mt-20 mb-28 px-4 z-20'>
         <div className='relative w-full'>
-          <label htmlFor="image_url" className="block mb-2 text-current font-bold">Input Your Photos</label>
+          <label htmlFor="image_url" className="block mb-2 text-current font-bold">Your Gender</label>
+          <div>
+            <ul className='choose2'>
+              <li>
+                <input
+                  id='choose_gender1'
+                  type="radio"
+                  name='choose_gender'
+                  value="Man "
+                  onChange={(e) => setPrompt1(e.target.value)}
+                />
+                <label htmlFor="choose_gender1">Man</label>
+              </li>
+              <li>
+                <input
+                  id='choose_gender2'
+                  type="radio"
+                  name='choose_gender'
+                  value="Woman "
+                  onChange={(e) => setPrompt1(e.target.value)}
+                />
+                <label htmlFor="choose_gender2">Woman</label>
+              </li>
+            </ul>
+            {/* {prompt1} */}
+          </div>
+          <label htmlFor="image_url" className="block mb-2  mt-4 text-current font-bold">Choose Your Style</label>
+          <div>
+            <ul className='choose'>
+              <li>
+                <input
+                  id='choose_style1'
+                  type="radio"
+                  name='choose_style'
+                  value="cyberpunk, synthwave night city, futuristic, high quality, highly detailed, high resolution, sharp, hyper realistic, extremely detailed"
+                  onChange={(e) => setPrompt2(e.target.value)}
+                />
+                <label htmlFor="choose_style1">
+                  <Image
+                    className="relative h-auto w-full"
+                    src="/style1.png"
+                    alt="icon"
+                    width={98}
+                    height={98}
+                    priority
+                  />
+                </label>
+              </li>
+              <li>
+                <input
+                  id='choose_style2'
+                  type="radio"
+                  name='choose_style'
+                  value="Craft a captivating photo capturing the essence of Korean style. Integrate modern and traditional elements seamlessly. Emphasize elegant fashion choices, vibrant colors, and perhaps include iconic Korean motifs. Pay attention to lighting to enhance the mood and ensure a visually stunning representation of Korean-inspired aesthetics, high quality, highly detailed, high resolution, sharp, hyper realistic, extremely detailed"
+                  onChange={(e) => setPrompt2(e.target.value)}
+                />
+                <label htmlFor="choose_style2">
+                  <Image
+                    className="relative h-auto w-full"
+                    src="/style2.png"
+                    alt="icon"
+                    width={98}
+                    height={98}
+                    priority
+                  />
+                </label>
+              </li>
+              <li>
+                <input
+                  id='choose_style3'
+                  type="radio"
+                  name='choose_style'
+                  value="Imagine an astronaut striking a pose amidst the vastness of outer space. Visualize the astronaut floating gracefully, tethered to a spacecraft or space station, with the Earth suspended in the background, a breathtaking sphere of blue and white against the black canvas of space. The astronaut's spacesuit, adorned with reflective surfaces, catches the glimmering sunlight, creating a stunning interplay of light and shadows. Their visor reflects the cosmic panorama, capturing the awe-inspiring beauty of the cosmos. The astronaut's body language should convey a sense of exploration and triumph, symbolizing humanity's venture into the final frontier, high quality, highly detailed, high resolution, sharp, hyper realistic, extremely detailed"
+                  onChange={(e) => setPrompt2(e.target.value)}
+                />
+                <label htmlFor="choose_style3">
+                  <Image
+                    className="relative h-auto w-full"
+                    src="/style3.png"
+                    alt="icon"
+                    width={98}
+                    height={98}
+                    priority
+                  />
+                </label>
+              </li>
+            </ul>
+            {/* {prompt2} */}
+            {/* {prompt} */}
+          </div>
+
+          {/* <div className="text-lg w-full">
+            <label htmlFor="prompt" className="block mb-2 text-current">
+              Prompt
+            </label>
+            <input
+              className="w-full text-lg p-2 rounded bg-black/10 dark:bg-white/5 border border-black/20 dark:border-white/10"
+              id="prompt"
+              name="prompt"
+              placeholder="Imagine..."
+              value={prompt}
+              autoComplete="off"
+              onChange={(e) => setPrompt(e.target.value)}
+              onBlur={(e) => setPrompt(e.target.value.trim())}
+            />
+          </div> */}
+          <label htmlFor="image_url" className="block mb-2  mt-4 text-current font-bold">Input Your Photos</label>
           <div className="flex w-full items-center border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <input
               className="w-5/6 p-[10px] outline-none"
@@ -227,7 +336,7 @@ export default function Home() {
                 e.preventDefault();
                 generateImage();
               }}
-              className={`flex cursor-pointer items-center border-4 border-black px-4 py-3 font-bold text-base shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none ${imageFile ? "bg-[#FDDC07]" : "bg-gray-500" }`}
+              className={`flex cursor-pointer items-center border-4 border-black px-4 py-3 font-bold text-base shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none ${imageFile && prompt1 && prompt2 ? "bg-[#FDDC07]" : "disabled bg-gray-500" }`}
             >
               {loading ? 'WAITING FOR MAGIC...' : 'GENERATE NOW!'}
             </button>
