@@ -51,7 +51,7 @@ function Error(props: ErrorProps) {
 
 // const DEFAULT_PROMPT = 'an astronaut is on a spaceship, view of the earth from sss
 const DEFAULT_PROMPT = "A handsome man stands amidst the hustle and bustle of New York City, surrounded by towering skyscrapers. He is adorned in a well-fitted black suit, exuding elegance and confidence. The glint in his eyes captures the vibrant energy of the busy city, reflecting his allure to the dynamic metropolitan life. Meanwhile, in his right hand, he holds a cup of coffee, symbolizing a brief moment of tranquility amid the never-ending buzz of the city that never sleeps. The scene resembles a snapshot from the pages of The New York Times, capturing the essence of prestigious and intelligent urban living. Write a continuation of this man's story and how the New York atmosphere influences his life, high quality, highly detailed, high resolution, sharp, hyper realistic, extremely detailed";
-const DEFAULT_NEG_PROMPT = 'two faces, two heads, two body, boobs, sexy, bad anatomy, bad hands, blurry, low resolution, bad, ugly, low quality, pixelated, interpolated, compression artifacts, noisey, grainy';
+const DEFAULT_NEG_PROMPT = 'two faces, two heads, two bodies, boobs, sexy, bad anatomy, bad hands, blurry, low resolution, bad, ugly, low quality, pixelated, interpolated, compression artifacts, noisey, grainy';
 let URL_RESULT = ''
 
 
