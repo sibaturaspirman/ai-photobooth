@@ -61,6 +61,7 @@ export default function Home() {
   const [prompt, setPrompt] = useState<string>(DEFAULT_PROMPT);
   const [promptNegative, setPromptNegative] = useState<string>(DEFAULT_NEG_PROMPT);
   const [CGF, setCGF] = useState<number>(7.5);
+  const [SEED, setSEED] = useState<number>(100);
   const [numSteps, setNumSteps] = useState<number>(50);
   const [numProses, setNumProses] = useState<number>(0);
   // const negative_prompt = DEFAULT_NEG_PROMPT;
@@ -122,8 +123,9 @@ export default function Home() {
             negative_prompt: promptNegative,
             guidance_scale: CGF,
             num_inference_steps: numSteps,
+            seed: SEED,
             width: 624,
-            height: 1024
+            height: 624
           },
           pollInterval: 5000, // Default is 1000 (every 1s)
           logs: true,
@@ -244,6 +246,20 @@ export default function Home() {
                 placeholder="Ex : 7"
                 value={CGF}
                 onChange={(e) => setCGF(parseFloat(e.target.value))}
+              />
+            </div>
+          </div>
+          <div className='w-full mb-4'>
+            <label htmlFor="cgf" className="block mb-2  mt-4 text-current font-bold">Seed</label>
+            <div className="flex w-full items-center border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              <input
+                className="w-full p-[10px] outline-none"
+                id="seed"
+                name="seed"
+                type="number"
+                placeholder="Ex : 7"
+                value={SEED}
+                onChange={(e) => setSEED(parseFloat(e.target.value))}
               />
             </div>
           </div>
