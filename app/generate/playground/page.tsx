@@ -125,7 +125,7 @@ export default function Home() {
             num_inference_steps: numSteps,
             seed: SEED,
             width: 624,
-            height: 624
+            height: 864
           },
           pollInterval: 5000, // Default is 1000 (every 1s)
           logs: true,
